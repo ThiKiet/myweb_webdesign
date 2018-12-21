@@ -1,0 +1,5 @@
+Huy: làm form
+Nhung: Check l?i
+Tu?n, Th?o, Hà: l?y ?nh và hi?n th? ?nh ra màn hình
+Vinh, Thuong, Ki?t: l?y thông tin Name, email..., hi?n th? ra màn hình
+Hùng: g?p fill.
