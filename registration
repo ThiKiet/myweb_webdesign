@@ -1,0 +1,175 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registration</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+    
+    <div class="row">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            
+        </div>
+        
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            
+        
+                
+                <form action="" method="POST" role="form">
+                    <legend>Registration Form</legend>
+                    
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label for="">full Name:</label>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <input type="text" class="form-control" name="Full Name" id="" placeholder="Full Name">
+                        <p style="color: #cccccc">Last Name,First Name, eg..Smith,Harry</p>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label for="">Email:</label>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <input type="email" class="form-control" name="email" id="" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label for="">Password:</label>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <input type="password" class="form-control" name="password" id="" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label for="">Date of Birth:</label>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <input type="number" class="form-control"  name="birth" id="" placeholder="mm/dd/yy">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label for="">Country:</label>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        
+                        <select id="input" name="country" class="form-control" required="required">
+                            <option value="Afghanistan">Afghanistan</option>
+                            <option value="vietnamese">vietnamese</option>
+                            <option value="china">china</option>
+                            <option value="japan">japan</option>
+                            <option value="america">america</option>
+                            <option value="canada">canada</option>
+                            <option value="korean">korean</option>
+                        </select>
+                        
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label for="">Gender:</label>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <input type="radio" name="gender" value="male" checked> Male
+                        <input type="radio" name="gender" value="female"> Female
+                        <input type="radio" name="gender" value="Unknown"> Unknown
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label for="">Meal<br>Preference:</label>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <input type="checkbox" name="meal1" value="Low calorle">Low calorle<br>
+                        <input type="checkbox" name="meal2" value="Low salt">Low salt<br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <label for=""></label>
+                        </div>
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        
+                        <div class="checkbox">
+                            
+                            <label>
+                                <input type="checkbox" name="accept" value="">i accept <a>terms</a>
+                            </label>
+                        </div>
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                            
+                        </div>
+                        
+                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                            <button type="submit" style="width: 100%" class="btn btn-primary">Register</button>
+                        </div>
+                        
+                    </div>
+                    
+                </form>
+               
+        </div>
+
+        
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            
+        </div>
+        
+    </div>
+    <?php
+        error_reporting(1);
+        $List_User = array ();
+        if(isset($_POST["Full Name"]) && isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["birth"]) && isset($_POST["country"]) && isset($_POST["gender"]) && isset($_POST["meal"])){
+            $Full_Name = $_POST['Full Name'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $birth = $_POST['birth'];
+            $country = $_POST['country'];
+            $gender = $_POST['gender'];
+            $meal = '';
+
+            if(isset($_POST["meal1"]) && isset($_POST["meal2"])){
+                $meal = 'Low calorle'.'Low salt';
+                elseif (isset($_POST["meal1"])){
+                    $meal = 'low calorle';
+                }elseif (isset($_POST["meal2"])){
+                    $meal = 'low salt';
+                }
+            }
+
+
+            // $User = array(
+            //     'Name' => $Full_Name,
+            //     'Email' => $email,
+            //     'Password' => $password,
+            //     'Date of birth:' => $birth,
+            //     'Country' => $country,
+            //     'Gender' => $gender,
+            //     'Meal Preference' => $meal
+            // );
+        }
+        
+        
+    ?>
+</body>
+</html>
